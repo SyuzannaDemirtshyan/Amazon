@@ -2,9 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
+
 class LoginPage():
     def __init__(self, driver: webdriver.Chrome):
-        self.driver=driver
+        self.driver = driver
         pass
 
     def fill_username_field(self, username):
@@ -22,7 +23,5 @@ class LoginPage():
         passwordFieldElement.send_keys(password)
 
     def click_to_signin_button(self):
-        sleep(6)
         signInButtonElement = self.driver.find_element(By.ID, "signInSubmit")
         signInButtonElement.click()
-        sleep(10)
